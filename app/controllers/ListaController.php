@@ -10,11 +10,11 @@ class ListaController extends Controller
     }
 
     public function listaAction(){
-        $lista = new Listas();
-        $lista->getLista();
+        // $lista = new Listas();
+        // $lista->getLista();
 
-        $this->view->lista;
-        // $this->view->lista = Listas::find("realizado = 0");
+        // $this->view->lista;
+        $this->view->lista = Listas::find("realizado = 0");
 
     }
     public function cadastroAction()
@@ -31,6 +31,7 @@ class ListaController extends Controller
 
         if ($success) {
             echo "Tarefa Cadastrada";
+            $this->response->redirect('');
         } else {
             echo "Sorry, the following problems were generated: ";
 
@@ -41,5 +42,20 @@ class ListaController extends Controller
             }
         }
 
+    }
+
+    public function realizadaAction($id){
+        
+        if (empty($id) or !isset($id)) {
+           $this->response->redirect('');
+        }else{
+                    $realiza = Listas::findFirst("id = '$id'");
+                    $realiza->realizado = true;
+                    $realiza->update();
+                    $this->response->redirect('');
+
+
+
+        }
     }
 }

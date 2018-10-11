@@ -8,7 +8,7 @@ defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
 return new \Phalcon\Config([
     'database' => [
-      
+     
     ],
     'application' => [
         'appDir'         => APP_PATH . '/',

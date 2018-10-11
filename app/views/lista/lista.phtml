@@ -38,8 +38,9 @@ tr:nth-child(even) {
                     <?php if ($lista->count() > 0): ?>
                         <?php foreach ($lista as $listas): ?>
                             <tr>
-                            <td>{{ $lista->nome }}</td>
-                            <td>{{ $lista->descricao }}</td>
+                            <td><?= $listas->nome ?></td>
+                            <td><?= $listas->descricao ?></td>
+                            <td><a href="<?= $this->url->get('lista/realizada/'.$listas->id); ?>"><button>Realizada</button></a></td>
                             </td>
                             </tr>
                         <?php endforeach; ?>
@@ -48,6 +49,10 @@ tr:nth-child(even) {
                     <?php endif; ?>
                     </tbody>
             </table>
+
+            <p>
+                 <a href="/lista"><?php echo $this->tag->submitButton("Criar Tarefa"); ?></a>
+             </p>
         </div>
 </body>
 </html>
