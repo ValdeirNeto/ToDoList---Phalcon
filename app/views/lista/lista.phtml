@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h2>Tarefas a serem realizadas</h2>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Descrição da Tarefa</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <?php if ($lista->count() > 0): ?>
+                        <?php foreach ($lista as $listas): ?>
+                            <tr>
+                            <td>{{ $lista->nome }}</td>
+                            <td>{{ $lista->descricao }}</td>
+                            </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                    <p>Sem tarefa a ser realizada!</p>
+                    <?php endif; ?>
+                    </tbody>
+            </table>
+        </div>
+</body>
+</html>

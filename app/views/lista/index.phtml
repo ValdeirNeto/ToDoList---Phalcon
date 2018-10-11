@@ -1,0 +1,19 @@
+<h2>Criar Tarefa</h2>
+
+<?php echo $this->tag->form("lista/cadastro"); ?>
+
+    <p>
+        <label for="name">Nome</label>
+        <?php echo $this->tag->textField("nome"); ?>
+    </p>
+
+    <p>
+        <label for="email">Descricao</label>
+        <?php echo $this->tag->textField("descricao"); ?>
+    </p>
+
+    <p>
+        <?php echo $this->tag->submitButton("Cadastrar"); ?>
+    </p>
+
+</form>
